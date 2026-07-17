@@ -18,7 +18,9 @@ Publikált, GitHub Pages-kompatibilis statikus ArtJoe landing oldal.
 - `index.html`: teljes angol oldal és hozzáférhető tartalmi szerkezet.
 - `styles.css`: reszponzív, csökkentett mozgást támogató vizuális rendszer.
 - `script.js`: évszám és sütimentes outbound-click események.
-- `assets/`: kilenc alacsony felbontású előnézet.
+- `assets/`: kilenc alacsony felbontású előnézet és egy 1200×627 pixeles közösségi megosztókép.
+- `robots.txt`: keresőrobot-hozzáférés és sitemap-hivatkozás.
+- `sitemap.xml`: a publikus landing oldal keresőmotoros feltérképezési fájlja.
 - `.nojekyll`: GitHub Pages-kompatibilitási jelző.
 
 ## Publikálási ellenőrzés
@@ -27,8 +29,10 @@ Publikált, GitHub Pages-kompatibilis statikus ArtJoe landing oldal.
 2. Az abszolút Open Graph kép-URL és canonical URL beállítva.
 3. A kilenc Adobe Stock-assetlink és a két szerkesztőségi forráslink ellenőrizve.
 4. Az oldal asztali nézete és reszponzív szerkezete ellenőrizve.
-5. Csak szükség esetén adj privacy-friendly analitikát; az adatkezelést dokumentáld.
-6. A publikálás dátumát, URL-jét és változásait rögzítsd az account change logban.
+5. A GitHub-, X- és Pinterest-profilra mutató lábléchivatkozások hozzáadva.
+6. A Pinterest webhely-hitelesítés beállítva; Pinterest Tag vagy hirdetési követőkód nincs telepítve.
+7. Csak szükség esetén adj privacy-friendly analitikát; az adatkezelést dokumentáld.
+8. A publikálás dátumát, URL-jét és változásait rögzítsd az account change logban.
 
 ## Helyi megnyitás
 

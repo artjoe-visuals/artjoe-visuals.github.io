@@ -540,6 +540,30 @@ footer p {
   margin: 0;
 }
 
+.footer-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 1rem;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-social a {
+  color: var(--cyan);
+  font-weight: 800;
+  text-underline-offset: 0.2em;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  color: var(--white);
+}
+
 footer p:last-child {
   text-align: right;
 }
