@@ -102,8 +102,8 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  min-height: calc(100vh - 72px);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  min-height: clamp(620px, 76vh, 760px);
   background: var(--ink);
   color: var(--white);
 }
@@ -112,7 +112,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(4rem, 8vw, 8rem) clamp(2rem, 6vw, 6rem);
+  padding: clamp(4rem, 6vw, 6rem) clamp(2rem, 5vw, 5.5rem);
 }
 
 .eyebrow {
@@ -133,18 +133,19 @@ p {
 }
 
 h1 {
-  max-width: 11ch;
-  margin-bottom: 1.8rem;
-  font-size: clamp(3.2rem, 6.6vw, 7.3rem);
-  line-height: 0.92;
-  letter-spacing: -0.065em;
+  max-width: 12.5ch;
+  margin-bottom: 1.6rem;
+  font-size: clamp(3.75rem, 4.8vw, 6rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
 }
 
 .hero-intro {
-  max-width: 36rem;
-  margin-bottom: 2.5rem;
+  max-width: 34rem;
+  margin-bottom: 2.2rem;
   color: #c5cbc2;
-  font-size: clamp(1.1rem, 1.7vw, 1.38rem);
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
 }
 
 .hero-actions {
@@ -186,61 +187,56 @@ h1 {
 }
 
 .hero-art {
-  position: relative;
-  min-height: 650px;
-  overflow: hidden;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: clamp(2rem, 5vw, 5.5rem);
   background: #1b1e19;
 }
 
-.hero-art figure {
-  margin: 0;
+.hero-feature {
+  display: block;
+  width: min(100%, 900px);
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: var(--ink);
-  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.32);
+  color: var(--white);
+  text-decoration: none;
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.28);
+  transition: transform 180ms ease, border-color 180ms ease;
 }
 
-.hero-art img {
+.hero-feature:hover,
+.hero-feature:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+}
+
+.hero-feature img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
-.hero-art figcaption {
-  padding: 0.65rem 0.8rem;
+.hero-feature-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem 1rem;
+  padding: 0.95rem 1.1rem;
   color: #dbe0d8;
-  font-size: 0.68rem;
-  font-weight: 700;
+  font-size: 0.72rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-.hero-main {
-  position: absolute;
-  inset: 10% 8% 25% 12%;
+.hero-feature-meta > span {
+  color: var(--cyan);
+  font-weight: 900;
 }
 
-.hero-main img {
-  height: calc(100% - 43px);
-}
-
-.hero-small {
-  position: absolute;
-  width: 36%;
-  height: 27%;
-}
-
-.hero-small img {
-  height: calc(100% - 41px);
-}
-
-.hero-small-one {
-  right: 2%;
-  bottom: 3%;
-}
-
-.hero-small-two {
-  left: 3%;
-  bottom: 4%;
+.hero-feature-meta strong {
+  font-weight: 800;
 }
 
 .signal-strip {
@@ -367,7 +363,7 @@ h2 {
 .asset-card {
   position: relative;
   display: grid;
-  grid-template-rows: 260px auto;
+  grid-template-rows: auto 1fr;
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--white);
@@ -383,7 +379,8 @@ h2 {
 
 .asset-card img {
   width: 100%;
-  height: 260px;
+  height: auto;
+  aspect-ratio: 220 / 126;
   object-fit: cover;
 }
 
@@ -587,11 +584,12 @@ footer p:last-child {
   }
 
   .hero-copy {
-    min-height: 680px;
+    min-height: auto;
   }
 
   .hero-art {
-    min-height: 620px;
+    min-height: auto;
+    padding-block: 3rem;
   }
 
   .signal-strip {
@@ -629,11 +627,12 @@ footer p:last-child {
 
   .hero-copy {
     min-height: auto;
-    padding: 5.5rem 1.25rem;
+    padding: 4.5rem 1.25rem;
   }
 
   h1 {
-    font-size: clamp(3.2rem, 17vw, 5.2rem);
+    max-width: 11ch;
+    font-size: clamp(3.15rem, 13vw, 4.7rem);
   }
 
   .hero-actions {
@@ -641,16 +640,7 @@ footer p:last-child {
   }
 
   .hero-art {
-    min-height: 510px;
-  }
-
-  .hero-main {
-    inset: 6% 5% 33%;
-  }
-
-  .hero-small {
-    width: 43%;
-    height: 25%;
+    padding: 1.25rem;
   }
 
   .signal-strip {
@@ -678,14 +668,6 @@ footer p:last-child {
 
   .asset-grid {
     grid-template-columns: 1fr;
-  }
-
-  .asset-card {
-    grid-template-rows: 240px auto;
-  }
-
-  .asset-card img {
-    height: 240px;
   }
 
   .proof-image img {
